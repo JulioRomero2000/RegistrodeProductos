@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RegistrodeProductos.MainPage"
+    Title="Registro de Productos">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="8">
+
+            <Label
+                Text="Registro de Productos"
+                Style="{StaticResource Headline}"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Complete todos los campos para registrar un producto."
+                Style="{StaticResource SubHeadline}"
+                Margin="0,0,0,12" />
+
+            <Label
+                Text="ID" />
+
+            <Entry
+                x:Name="IdEntry"
+                Placeholder="Cargando ID..."
+                IsReadOnly="True"
+                TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                BackgroundColor="Transparent" />
+
+            <Label
+                Text="Nombre del producto" />
+
+            <Entry
+                x:Name="NombreEntry"
+                Placeholder="Ej. Teclado"
+                MaxLength="100"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Label
+                Text="Descripción" />
+
+            <Editor
+                x:Name="DescripcionEntry"
+                Placeholder="Ingrese la descripción"
+                AutoSize="TextChanges"
+                HeightRequest="90" />
+
+            <Label
+                Text="Precio" />
+
+            <Entry
+                x:Name="PrecioEntry"
+                Placeholder="Ej. 250.00"
+                Keyboard="Numeric" />
+
+            <Label
+                Text="Cantidad" />
+
+            <Entry
+                x:Name="CantidadEntry"
+                Placeholder="Ej. 10"
+                Keyboard="Numeric" />
+
+            <Label
+                Text="Fecha de registro" />
+
+            <DatePicker
+                x:Name="FechaPicker"
+                Format="dd/MM/yyyy" />
+
+            <Button
+                x:Name="GuardarButton"
+                Text="Guardar Producto"
+                Clicked="GuardarButton_Clicked" />
+
+            <Button
+                Text="Mostrar productos registrados"
+                Clicked="MostrarButton_Clicked"
+                BackgroundColor="Green"
+                TextColor="White" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
